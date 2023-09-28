@@ -1,33 +1,30 @@
-// import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-// import { useEffect, useMemo } from "react";
-// import { useInView } from "react-intersection-observer";
-// import { env } from "~/env.mjs";
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import { useEffect, useMemo } from "react";
+import { useInView } from "react-intersection-observer";
 
 export const Location = (props: {
   setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
 }) => {
-  // const { isLoaded } = useLoadScript({
-  //   googleMapsApiKey: env.GOOGLE_MAPS_API_KEY,
-  // });
-  // const center = useMemo(
-  //   () => ({ lat: 43.73558548928098, lng: 19.705922845373173 }),
-  //   [],
-  // );
-  // const { ref, inView } = useInView({
-  //   threshold: 0.9,
-  // });
+  const { isLoaded } = useLoadScript({
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ? process.env.GOOGLE_MAPS_API_KEY : '',
+  });
+  const center = useMemo(
+    () => ({ lat: 43.73558548928098, lng: 19.705922845373173 }),
+    [],
+  );
+  const { ref, inView } = useInView({
+    threshold: 0.9,
+  });
 
-  // useEffect(() => {
-  //   if (inView) {
-  //     props.setActiveNavItem("Location");
-  //   }
-  // }, [inView]);
+  useEffect(() => {
+    if (inView) {
+      props.setActiveNavItem("Location");
+    }
+  }, [inView]);
 
   return (
-    <div className="mt-10 flex  w-[60%] flex-col"
-    //  ref={ref}
-      id="location">
-      {/* <h3 className="mb-10 text-primary">Lokacija</h3>
+    <div className="mt-10 flex  w-[60%] flex-col" ref={ref} id="location">
+      <h3 className="mb-10 text-primary">Lokacija</h3>
       {!isLoaded ? (
         <h1>Loading...</h1>
       ) : (
@@ -38,7 +35,7 @@ export const Location = (props: {
         >
           <Marker position={center}></Marker>
         </GoogleMap>
-      )} */}
+      )}
     </div>
   );
 };
