@@ -29,7 +29,7 @@ export default function Home() {
         />
       </div>
       <div className="sticky top-0 z-50 mb-2 flex w-full flex-row justify-center bg-background pt-6">
-        {NAV_ITEMS.map((navItem: NavItem) => (
+        {NAV_ITEMS.map((navItem: {name: string, href:string}) => (
           <NavItem
             name={navItem.name}
             key={navItem.name}

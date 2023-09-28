@@ -1,4 +1,3 @@
-import type { PropsWithChildren } from "react";
 export interface NavItem {
   name: string;
   activeItem: string;
