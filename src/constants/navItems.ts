@@ -1,4 +1,4 @@
-export const NAV_ITEMS: any[] = [
+export const NAV_ITEMS: {name: string, href:  string}[] = [
   {
     name: "Opis",
     href: "#description",

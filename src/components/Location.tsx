@@ -1,12 +1,13 @@
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import { useEffect, useMemo } from "react";
 import { useInView } from "react-intersection-observer";
+import { env } from "~/env.mjs";
 
 export const Location = (props: {
   setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
+    googleMapsApiKey: env.GOOGLE_MAPS_API_KEY,
   });
   const center = useMemo(
     () => ({ lat: 43.73558548928098, lng: 19.705922845373173 }),

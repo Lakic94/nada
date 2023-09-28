@@ -25,19 +25,19 @@ export const Description = (props: {
       <h2 className="mb-2 text-primary">Nada Zlatibor</h2>
       <div className="flex flex-row gap-14">
         <div className="flex flex-row gap-2">
-          <Image src={Group} alt="4 guests" width={25} height={25}></Image>4
+          <Image src={Group as string} alt="4 guests" width={25} height={25}></Image>4
           Gosta
         </div>
         <div className="flex flex-row gap-2">
-          <Image src={Guests} alt="4 guests" width={25} height={25}></Image>1
+          <Image src={Guests as string} alt="4 guests" width={25} height={25}></Image>1
           Soba
         </div>
         <div className="flex flex-row gap-2">
-          <Image src={Bath} alt="4 guests" width={25} height={25}></Image>1
+          <Image src={Bath as string} alt="4 guests" width={25} height={25}></Image>1
           Kupatilo
         </div>
         <div className="flex flex-row gap-2">
-          <Image src={Bed} alt="4 guests" width={25} height={25}></Image>2
+          <Image src={Bed as string} alt="4 guests" width={25} height={25}></Image>2
           Kreveta
         </div>
       </div>

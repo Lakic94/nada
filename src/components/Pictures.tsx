@@ -13,7 +13,7 @@ export const Pictures = (props: {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });
-  let [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [swiperRef, setSwiperRef] = useState(null);
 
   function closeModal() {
@@ -22,13 +22,6 @@ export const Pictures = (props: {
 
   function openModal() {
     setIsOpen(true);
-  }
-
-  function handleClick(index: number) {
-    console.log(swiperRef);
-    if (swiperRef) {
-      (swiperRef as any).slideTo(index - 1, 0);
-    }
   }
 
   useEffect(() => {
@@ -57,7 +50,6 @@ export const Pictures = (props: {
                 className="rounded-[1.5rem]"
                 onClick={() => {
                   setIsOpen(true);
-                  handleClick(i);
                 }}
               ></Image>
             </div>
