@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 export const Location = (props: { [key: string]: any }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyD5dcb7T-uNU04Y0mOpjyUJmWoMo4ZXRyg",
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as any,
   });
   const center = useMemo(
     () => ({ lat: 43.73558548928098, lng: 19.705922845373173 }),
