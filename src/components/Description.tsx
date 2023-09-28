@@ -6,7 +6,9 @@ import Bed from "../../public/icons/bed.svg";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
 
-export const Description = (props: { [key: string]: any }) => {
+export const Description = (props: {
+  setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });
@@ -35,7 +37,8 @@ export const Description = (props: { [key: string]: any }) => {
           Kupatilo
         </div>
         <div className="flex flex-row gap-2">
-          <Image src={Bed} alt="4 guests" width={25} height={25}></Image>2 Kreveta
+          <Image src={Bed} alt="4 guests" width={25} height={25}></Image>2
+          Kreveta
         </div>
       </div>
       <div className="mt-6">

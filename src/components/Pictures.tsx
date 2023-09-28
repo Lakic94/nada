@@ -2,19 +2,14 @@ import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Dialog, Transition } from "@headlessui/react";
-import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
-import {
-  Navigation,
-  Pagination,
-  Scrollbar,
-  A11y,
-  Keyboard,
-  Virtual,
-} from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Keyboard, Virtual } from "swiper/modules";
 import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/navigation";
-export const Pictures = (props: { [key: string]: any }) => {
+export const Pictures = (props: {
+  setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });

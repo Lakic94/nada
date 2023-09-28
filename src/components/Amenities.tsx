@@ -2,7 +2,9 @@ import Image from "next/image";
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 
-export const Amenities = (props: { [key: string]: any }) => {
+export const Amenities = (props: {
+  setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });

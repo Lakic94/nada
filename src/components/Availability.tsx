@@ -3,7 +3,9 @@ import { useInView } from "react-intersection-observer";
 import { Calendar } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 
-export const Availability = (props: { [key: string]: any }) => {
+export const Availability = (props: {
+  setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { ref, inView } = useInView({
     threshold: 0.9,
   });
