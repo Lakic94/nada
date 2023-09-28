@@ -110,9 +110,6 @@ export const Pictures = (props: { [key: string]: any }) => {
                     keyboard
                     virtual
                     className="h-full"
-                    onSwiper={(swiper: SwiperClass) => {
-                      setSwiperRef(swiper);
-                    }}
                   >
                     {pictures.map((pic, i) => {
                       return (
