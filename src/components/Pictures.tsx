@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Fragment, useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import { Dialog, Transition } from "@headlessui/react";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, SwiperClass } from "swiper/react";
 import {
   Navigation,
   Pagination,
@@ -110,7 +110,7 @@ export const Pictures = (props: { [key: string]: any }) => {
                     keyboard
                     virtual
                     className="h-full"
-                    onSwiper={(swiper: any) => {
+                    onSwiper={(swiper: SwiperClass) => {
                       setSwiperRef(swiper);
                     }}
                   >
