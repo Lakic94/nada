@@ -10,7 +10,7 @@ export const Availability = (props: {
     threshold: 0.9,
   });
 
-  let dates = ["2023, 10, 1", "2023, 10, 2", "2023, 9, 27"];
+  const dates = ["2023, 10, 1", "2023, 10, 2", "2023, 9, 27"];
 
   useEffect(() => {
     if (inView) {

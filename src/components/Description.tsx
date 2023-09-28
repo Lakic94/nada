@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Guests from "../../public/icons/doors.svg";
+import {default as Guests} from "../../public/icons/doors.svg";
 import Group from "../../public/icons/group.svg";
 import Bath from "../../public/icons/bathroom.svg";
 import Bed from "../../public/icons/bed.svg";
