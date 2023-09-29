@@ -6,7 +6,8 @@ export const Location = (props: {
   setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
 }) => {
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY ? process.env.GOOGLE_MAPS_API_KEY : '',
+    // eslint-disable-next-line turbo/no-undeclared-env-vars
+    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
   });
   const center = useMemo(
     () => ({ lat: 43.73558548928098, lng: 19.705922845373173 }),
