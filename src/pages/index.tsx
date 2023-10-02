@@ -29,7 +29,7 @@ export default function Home() {
           className="rounded-large p-2"
         />
       </div>
-      <div className="sticky top-0 z-10 mb-2 flex w-full flex-row justify-center bg-background p-5 pt-6">
+      <div className="sticky xs:static top-0 z-10 mb-2 xs:flex-wrap xs:p-0 xs:gap-6 flex w-full flex-row justify-center bg-background p-5 pt-6">
         {NAV_ITEMS.map(
           (navItem: { name: string; href: string; item: string }) => (
             <NavItem

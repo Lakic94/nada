@@ -24,7 +24,7 @@ export const Location = (props: {
   }, [inView]);
 
   return (
-    <div className="mt-10 flex  w-[60%] flex-col" ref={ref} id="location">
+    <div className="mt-10 flex xs:p-4 xs:w-full  w-[60%] flex-col" ref={ref} id="location">
       <h3 className="mb-10 text-primary">Lokacija</h3>
       {!isLoaded ? (
         <h1>Loading...</h1>

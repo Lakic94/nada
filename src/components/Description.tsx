@@ -20,10 +20,10 @@ export const Description = (props: {
   }, [inView]);
 
   return (
-    <div className="w-[60%]" ref={ref} id="description">
+    <div className="w-[60%] xs:p-4 xs:w-full" ref={ref} id="description">
       <span className="text-primary">Apartman</span>
       <h2 className="mb-2 text-primary">Nada Zlatibor</h2>
-      <div className="flex flex-row gap-14">
+      <div className="flex flex-row xs:flex-wrap xs:gap-4 gap-14">
         <div className="flex flex-row gap-2">
           <Image
             src={Group as string}

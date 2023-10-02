@@ -31,9 +31,9 @@ export const Pictures = (props: {
   }, [inView]);
 
   return (
-    <div className="mt-10 w-[60%]" ref={ref} id="pictures">
+    <div className="mt-10 w-[60%] xs:p-4 xs:w-full" ref={ref} id="pictures">
       <h3 className="mb-10 text-primary">Slike</h3>
-      <div className="grid grid-cols-3 gap-14">
+      <div className="grid grid-cols-3 xs:grid-cols-2 gap-14">
         {pictures.slice(0, 6).map((pic, i) => (
           <div className="flex  flex-col gap-2" key={pic.name + i}>
             <div
@@ -76,11 +76,11 @@ export const Pictures = (props: {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="bg-black fixed inset-0 bg-opacity-25" />
+            <div className="bg-black fixed inset-0" />
           </Transition.Child>
 
-          <div className="fixed inset-0 overflow-y-auto">
-            <div className="flex min-h-full items-center justify-center p-4 text-center">
+          <div className="fixed bg-black inset-0 overflow-y-auto">
+            <div className="flex bg-black min-h-full items-center justify-center p-4 text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -90,13 +90,13 @@ export const Pictures = (props: {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="bg-white h-[1000px] w-3/4 transform overflow-hidden rounded-2xl text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="bg-black h-[1000px] w-3/4 transform overflow-hidden rounded-2xl text-left align-middle shadow-xl transition-all">
                   <Swiper
                     modules={[Navigation, Keyboard, Virtual]}
                     navigation
                     keyboard
                     virtual
-                    className="h-full"
+                    className="h-full w-full xs:h-4/6 xs:w-full"
                   >
                     {pictures.map((pic, i) => {
                       return (
@@ -106,7 +106,7 @@ export const Pictures = (props: {
                             alt="4 guests"
                             fill
                             style={{
-                              objectFit: "cover",
+                              objectFit: "contain",
                             }}
                             className="rounded-[1.5rem]"
                           ></Image>

@@ -17,10 +17,10 @@ export const Contact = (props: {
     }
   }, [inView]);
   return (
-    <div ref={ref} id="contact" className={`mb-32 mt-10 flex w-[60%] flex-col`}>
+    <div ref={ref} id="contact" className={`mb-32 mt-10 flex w-[60%] flex-col xs:p-4 xs:w-full`}>
       <h3 className="mb-10 text-primary">Kontakt</h3>
-      <div className="flex flex-row gap-14">
-        <div className="flex flex-row gap-2">
+      <div className="flex flex-row gap-14 xs:flex-col">
+        <div className="flex flex-row  gap-2">
           <Image
             src={Phone as string}
             alt="4 guests"

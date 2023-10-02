@@ -9,7 +9,7 @@ export interface NavItem {
 export const NavItem = (props: NavItem) => {
   return (
     <div
-      className={`group w-[10rem] text-center text-primary hover:cursor-pointer`}
+      className={`group w-[10rem] xs:w-fit text-center text-primary hover:cursor-pointer`}
     >
       <div>
         <a href={props.href}>{props.name}</a>

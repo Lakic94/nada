@@ -15,7 +15,7 @@ export const Amenities = (props: {
     }
   }, [inView]);
   return (
-    <div className="mt-10 w-[60%]" ref={ref} id="amenities">
+    <div className="mt-10 w-[60%] xs:p-4 xs:w-full" ref={ref} id="amenities">
       <h3 className="mb-10 text-primary">Pogodnosti</h3>
       <div className="grid grid-cols-3 gap-14">
         {amenities.map((amenitie) => (
