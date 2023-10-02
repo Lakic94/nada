@@ -3,6 +3,7 @@ export interface NavItem {
   activeItem: string;
   scroll: boolean;
   href: string;
+  item: string;
 }
 
 export const NavItem = (props: NavItem) => {
@@ -10,12 +11,14 @@ export const NavItem = (props: NavItem) => {
     <div
       className={`group w-[10rem] text-center text-primary hover:cursor-pointer`}
     >
-      <a href={props.href}>{props.name}</a>
-      {props.activeItem === props.name ? (
-        <div className="mt-1  h-1 bg-primary"></div>
-      ) : (
-        ""
-      )}
+      <div>
+        <a href={props.href}>{props.name}</a>
+        {props.activeItem === props.item ? (
+          <div className="mt-1 h-1 bg-primary"></div>
+        ) : (
+          ""
+        )}
+      </div>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export const Availability = (props: {
   }, [inView]);
 
   return (
-    <div className="mt-10 h-10 w-[60%]" ref={ref} id="availability">
+    <div className="mt-10 flex flex-col w-[60%]" ref={ref} id="availability">
       <h3 className="mb-10 text-primary">Dostupnost</h3>
       <Calendar
         disabledDate={(currentDate: Dayjs) => {

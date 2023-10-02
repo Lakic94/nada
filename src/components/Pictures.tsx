@@ -100,7 +100,7 @@ export const Pictures = (props: {
                   >
                     {pictures.map((pic, i) => {
                       return (
-                        <SwiperSlide key={i} virtualIndex={4}>
+                        <SwiperSlide key={i} virtualIndex={4} className="z-100">
                           <Image
                             src={pic.url}
                             alt="4 guests"
@@ -138,7 +138,7 @@ const pictures = [
     url: "/kuhinja trpezarija.jpg",
   },
   {
-    name: "Trpezarijski Sto",
+    name: "Trpezarija",
     url: "/sto trpezarija.jpg",
   },
   {
@@ -146,7 +146,7 @@ const pictures = [
     url: "/table.jpg",
   },
   {
-    name: "Dnevna Soba Sto",
+    name: "Dnevna Soba",
     url: "/tv.jpg",
   },
   {
