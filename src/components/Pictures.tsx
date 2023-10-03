@@ -4,9 +4,11 @@ import { useInView } from "react-intersection-observer";
 import { Dialog, Transition } from "@headlessui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Keyboard, Virtual } from "swiper/modules";
+import Clear from "../../public/icons/clear.svg";
 import "swiper/css/bundle";
 import "swiper/css";
 import "swiper/css/navigation";
+import { MdClose } from 'react-icons/md';
 export const Pictures = (props: {
   setActiveNavItem: React.Dispatch<React.SetStateAction<string>>;
 }) => {
@@ -31,9 +33,9 @@ export const Pictures = (props: {
   }, [inView]);
 
   return (
-    <div className="mt-10 w-[60%] xs:p-4 xs:w-full" ref={ref} id="pictures">
+    <div className="mt-10 w-[60%] xs:w-full xs:p-4" ref={ref} id="pictures">
       <h3 className="mb-10 text-primary">Slike</h3>
-      <div className="grid grid-cols-3 xs:grid-cols-2 gap-14">
+      <div className="grid grid-cols-3 gap-14 xs:grid-cols-2">
         {pictures.slice(0, 6).map((pic, i) => (
           <div className="flex  flex-col gap-2" key={pic.name + i}>
             <div
@@ -65,7 +67,7 @@ export const Pictures = (props: {
       >
         Pogledaj Sve Slike
       </button>
-      <Transition appear show={isOpen} as={Fragment}>
+      {/* <Transition appear show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-10" onClose={closeModal}>
           <Transition.Child
             as={Fragment}
@@ -76,11 +78,11 @@ export const Pictures = (props: {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="bg-black fixed inset-0" />
+            <div className="bg-[#000000] fixed inset-0" />
           </Transition.Child>
 
-          <div className="fixed bg-black inset-0 overflow-y-auto">
-            <div className="flex bg-black min-h-full items-center justify-center p-4 text-center">
+          <div className="fixed w-full bg-black inset-0 overflow-y-auto">
+            <div className="flex bg-black min-h-full items-center justify-center text-center">
               <Transition.Child
                 as={Fragment}
                 enter="ease-out duration-300"
@@ -119,7 +121,48 @@ export const Pictures = (props: {
             </div>
           </div>
         </Dialog>
-      </Transition>
+      </Transition> */}
+      <Dialog
+        as="div"
+        className="relative z-10"
+        open={isOpen}
+        onClose={closeModal}
+      >
+        <div className="fixed inset-0 bg-[#949292]" />
+
+        <div
+          className="bg-black fixed inset-0 h-full w-full overflow-y-auto"
+        >
+          <Dialog.Panel className="bg-black h-full w-full transform overflow-hidden rounded-2xl text-left align-middle transition-all xs:h-3/4">
+            <button className="p-2" type="button" onClick={closeModal}>
+              <MdClose className="h-6 w-6" />
+            </button>
+            <Swiper
+              modules={[Navigation, Keyboard, Virtual]}
+              navigation
+              keyboard
+              virtual
+              className="h-full"
+            >
+              {pictures.map((pic, i) => {
+                return (
+                  <SwiperSlide key={i} virtualIndex={4} className="z-100">
+                    <Image
+                      src={pic.url}
+                      alt="4 guests"
+                      fill
+                      style={{
+                        objectFit: "contain",
+                      }}
+                      className="rounded-[1.5rem]"
+                    ></Image>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </Dialog.Panel>
+        </div>
+      </Dialog>
     </div>
   );
 };
